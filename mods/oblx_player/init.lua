@@ -15,9 +15,10 @@ player_api.register_model("character.b3d", {
 		walk_mine = {x = 200, y = 219},
 		sit       = {x = 81,  y = 160},
 	},
-	collisionbox = {-0.3, 0.0, -0.3, 0.3, 1.7, 0.3},
-	stepheight = 0.6,
-	eye_height = 1.47,
+	visual_size = {x = 3, y = 3},
+	collisionbox = {-0.3, 0.0, -0.3, 0.3, 3.7, 0.3},
+	stepheight = 1.1,
+	eye_height = 4.47,
 })
 
 -- Update appearance when the player joins
@@ -31,4 +32,6 @@ minetest.register_on_joinplayer(function(player)
 		{x = 200, y = 219},
 		30
 	)
+
+	player:set_physics_override({ speed = 2, jump = 1.5 })
 end)
