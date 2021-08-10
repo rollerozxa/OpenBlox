@@ -29,105 +29,104 @@ colors = {
 		name = "Bright Yellow",
 		color = "f5cd2f"
 	}, {
-		id = "8",
-		name = "8",
+		id = "cool_yellow",
+		name = "Cool Yellow",
 		color = "fdea8c"
 	},{
-		id = "9",
-		name = "9",
+		id = "bright_blue",
+		name = "Bright Blue",
 		color = "0d69ab"
 	}, {
-		id = "10",
-		name = "10",
+		id = "bright_bluish_green",
+		name = "Bright Bluish Green",
 		color = "008f9b"
 	}, {
-		id = "11",
-		name = "11",
+		id = "medium_blue",
+		name = "Medium Blue",
 		color = "6e99c9"
 	}, {
-		id = "12",
-		name = "12",
+		id = "pastel_blue",
+		name = "Pastel Blue",
 		color = "80bbdb"
 	}, {
-		id = "13",
-		name = "13",
+		id = "light_blue",
+		name = "Light Blue",
 		color = "b4d2e3"
 	}, {
-		id = "14",
-		name = "14",
+		id = "medium_red",
+		name = "Medium Red",
 		color = "74869c"
 	}, {
-		id = "15",
-		name = "15",
+		id = "bright_orange",
+		name = "Bright Orange",
 		color = "da8540"
 	}, {
-		id = "16",
-		name = "16",
+		id = "brown_yellowish_orange",
+		name = "Brown Yellowish Orange",
 		color = "e29b3f"
-	},
-	{
-		id = "17",
-		name = "17",
+	}, {
+		id = "earth_green",
+		name = "Earth Green",
 		color = "27462c"
 	}, {
-		id = "18",
-		name = "18",
+		id = "dark_green",
+		name = "Dark Green",
 		color = "287f46"
 	}, {
-		id = "19",
-		name = "19",
+		id = "bright_green",
+		name = "Bright Green",
 		color = "4b974a"
 	}, {
-		id = "20",
-		name = "20",
+		id = "brown_yellowish_green",
+		name = "Brown Yellowish Green",
 		color = "a4bd46"
 	}, {
-		id = "21",
-		name = "21",
+		id = "medium_green",
+		name = "Medium Green",
 		color = "a1c48b"
 	}, {
-		id = "22",
-		name = "22",
+		id = "sand_green",
+		name = "Sand Green",
 		color = "789081"
 	}, {
-		id = "23",
-		name = "23",
+		id = "dark_orange",
+		name = "Dark Orange",
 		color = "a05f34"
 	}, {
-		id = "24",
-		name = "24",
+		id = "reddish_brown",
+		name = "Reddish Brown",
 		color = "694027"
 	},{
-		id = "25",
-		name = "25",
+		id = "bright_violet",
+		name = "Bright Violet",
 		color = "6b327b"
 	}, {
-		id = "26",
-		name = "26",
+		id = "light_reddish_violet",
+		name = "Light Reddish Violet",
 		color = "e8bac7"
 	}, {
-		id = "27",
-		name = "27",
+		id = "medium_red",
+		name = "Medium Red",
 		color = "da8679"
 	}, {
-		id = "28",
-		name = "28",
+		id = "brick_yellow",
+		name = "Brick Yellow",
 		color = "d7c599"
 	}, {
-		id = "29",
-		name = "29",
+		id = "sand_red",
+		name = "Sand Red",
 		color = "957976"
 	}, {
-		id = "30",
-		name = "30",
+		id = "brown",
+		name = "Brown",
 		color = "7c5c45"
 	}, {
-		id = "31",
-		name = "31",
+		id = "grime",
+		name = "Grime",
 		color = "cc8e68"
 	}, {
-		id = "32",
-		name = "32",
+		id = "light_orange",
+		name = "Light Orange",
 		color = "eab891"
 	},
 }
