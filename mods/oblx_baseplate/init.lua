@@ -2,7 +2,7 @@
 
 mg = {
 	blocks = {
-		gay = minetest.get_content_id("oblx_parts:gray"),
+		gay = minetest.get_content_id("oblx_parts:2"),
 	},
 	size = 256,
 	depth = 20
