@@ -1,32 +1,32 @@
 
 colors = {
 	{
-		id = "1",
-		name = "1",
+		id = "white",
+		name = "White",
 		color = "f2f3f2"
 	}, {
-		id = "2",
-		name = "2",
+		id = "light_stone_gray",
+		name = "Light Stone Gray",
 		color = "e5e4de"
 	}, {
-		id = "3",
-		name = "3",
+		id = "medium_stone_gray",
+		name = "Medium Stone Gray",
 		color = "a3a2a4"
 	}, {
-		id = "4",
-		name = "4",
+		id = "dark_stone_gray",
+		name = "Dark Stone Gray",
 		color = "635f61"
 	}, {
-		id = "5",
-		name = "5",
+		id = "black",
+		name = "Black",
 		color = "1b2a34"
 	}, {
-		id = "6",
-		name = "6",
+		id = "bright_red",
+		name = "Bright Red",
 		color = "c4281b"
 	}, {
-		id = "7",
-		name = "7",
+		id = "bright_yellow",
+		name = "Bright Yellow",
 		color = "f5cd2f"
 	}, {
 		id = "8",
