@@ -136,6 +136,7 @@ for _, color in pairs(colors) do
 		description = color.name..' Part',
 		tiles = {
 			"oblx_parts_outset.png^[multiply:#"..color.color,
+			"oblx_parts_inset.png^[multiply:#"..color.color,
 			"oblx_parts_smooth.png^[multiply:#"..color.color
 		},
 		groups = { oddly_breakable_by_hand = 3 },
