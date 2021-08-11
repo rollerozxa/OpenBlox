@@ -150,32 +150,51 @@ for _, color in pairs(colors) do
 		is_ground_content = true
 	})
 
-    minetest.register_node('oblx_parts:'..color.id..'_wedge', {
-        description = color.name..' Wedge Part',
-        tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
-        groups = { oddly_breakable_by_hand = 3 },
-        is_ground_content = true,
+	minetest.register_node('oblx_parts:'..color.id..'_wedge', {
+		description = color.name..' Wedge Part',
+		tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true,
 		drawtype = "mesh",
 		paramtype = "light",
 		paramtype2 = "facedir",
-        mesh = "oblx_parts_wedge.obj",
-        collision_box = {
-            type = "fixed",
-            fixed = {
-                {-0.5,  -0.5,  -0.5, 0.5, -0.25, 0.5},
-                {-0.5, -0.25, -0.25, 0.5,     0, 0.5},
-                {-0.5,     0,     0, 0.5,  0.25, 0.5},
-                {-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
-            }
-        },
-        selection_box = {
-            type = "fixed",
-            fixed = {
-                {-0.5,  -0.5,  -0.5, 0.5, -0.25, 0.5},
-                {-0.5, -0.25, -0.25, 0.5,     0, 0.5},
-                {-0.5,     0,     0, 0.5,  0.25, 0.5},
-                {-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
-            }
-        }
-    })
+		mesh = "oblx_parts_wedge.obj",
+		collision_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5,  -0.5,  -0.5, 0.5, -0.25, 0.5},
+				{-0.5, -0.25, -0.25, 0.5,     0, 0.5},
+				{-0.5,     0,     0, 0.5,  0.25, 0.5},
+				{-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
+			}
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5,  -0.5,  -0.5, 0.5, -0.25, 0.5},
+				{-0.5, -0.25, -0.25, 0.5,     0, 0.5},
+				{-0.5,     0,     0, 0.5,  0.25, 0.5},
+				{-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
+			}
+		}
+	})
+
+	minetest.register_node('oblx_parts:'..color.id..'_half', {
+		description = color.name..' Part (Half)',
+		tiles = {
+			"oblx_parts_outset.png^[multiply:#"..color.color,
+			"oblx_parts_inset.png^[multiply:#"..color.color,
+			"oblx_parts_smooth.png^[multiply:#"..color.color
+		},
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true,
+		drawtype = "nodebox",
+		paramtype = "light",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0, 0.5}, -- NodeBox1
+			}
+		},
+	})
 end
