@@ -35,3 +35,9 @@ minetest.register_on_joinplayer(function(player)
 
 	player:set_physics_override({ speed = 2, jump = 1.5 })
 end)
+
+minetest.register_on_joinplayer(function(player)
+	if minetest.is_creative_enabled(player:get_player_name()) and not player:get_inventory():contains_item("main", "oblx_partsbox:partsbox") then
+		player:get_inventory():add_item("main", "oblx_partsbox:partsbox")
+	end
+end)
