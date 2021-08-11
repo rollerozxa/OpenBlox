@@ -4,8 +4,8 @@ mg = {
 	blocks = {
 		gay = minetest.get_content_id("oblx_parts:light_stone_gray"),
 	},
-	size = 256,
-	depth = 20
+	size = tonumber(minetest.settings:get('oblx_baseplate_size')) or 256,
+	depth = tonumber(minetest.settings:get('oblx_baseplate_depth')) or 20,
 }
 
 data = {}

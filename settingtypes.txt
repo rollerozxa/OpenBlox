@@ -1,0 +1,6 @@
+[Mapgen]
+#	Size of the baseplate, in amount of nodes/studs outwards from the center.
+oblx_baseplate_size (Baseplate size) int 256 0 30000
+
+#	Depth of the baseplate, in amount of nodes/studs.
+oblx_baseplate_depth (Baseplate depth) int 20 0 30000
