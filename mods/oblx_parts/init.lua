@@ -143,6 +143,13 @@ for _, color in pairs(colors) do
 		is_ground_content = true
 	})
 
+	minetest.register_node('oblx_parts:'..color.id..'_glued', {
+		description = color.name..' Glued Part',
+		tiles = {"oblx_parts_glue.png^[multiply:#"..color.color},
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true
+	})
+
     minetest.register_node('oblx_parts:'..color.id..'_wedge', {
         description = color.name..' Wedge Part',
         tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
