@@ -2,7 +2,7 @@
 
 mg = {
 	blocks = {
-		gay = minetest.get_content_id("oblx_parts:light_stone_gray"),
+		gray = minetest.get_content_id("oblx_parts:light_stone_gray"),
 	},
 	size = tonumber(minetest.settings:get('oblx_baseplate_size')) or 256,
 	depth = tonumber(minetest.settings:get('oblx_baseplate_depth')) or 20,
@@ -28,7 +28,7 @@ if minetest.get_mapgen_setting('mg_name') == "singlenode" then
 					posi = area:index(pos.x, pos.y, pos.z)
 
 					if (pos.x >= -mg.size and pos.x <= mg.size) and (pos.z >= -mg.size and pos.z <= mg.size) and (pos.y >= -mg.depth and pos.y <= 0) then
-						data[posi] = mg.blocks.gay
+						data[posi] = mg.blocks.gray
 					end
 				end
 			end
