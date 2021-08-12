@@ -143,6 +143,42 @@ for _, color in pairs(colors) do
 		is_ground_content = true
 	})
 
+	minetest.register_node('oblx_parts:'..color.id..'_half', {
+		description = color.name..' Part (Half)',
+		tiles = {
+			"oblx_parts_outset.png^[multiply:#"..color.color,
+			"oblx_parts_inset.png^[multiply:#"..color.color,
+			"oblx_parts_smooth.png^[multiply:#"..color.color
+		},
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true,
+		drawtype = "nodebox",
+		paramtype = "light",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0, 0.5}, -- NodeBox1
+			}
+		},
+	})
+
+	minetest.register_node('oblx_parts:'..color.id..'_trans', {
+		description = color.name..' Part (Transparent)',
+		tiles = {
+			"oblx_parts_outset.png^[multiply:#"..color.color.."^[opacity:127",
+			"oblx_parts_inset.png^[multiply:#"..color.color.."^[opacity:127",
+			"oblx_parts_smooth.png^[multiply:#"..color.color.."^[opacity:127",
+		},
+		inventory_image = "oblx_parts_transparent.png^[multiply:#"..color.color,
+		wield_image = "oblx_parts_transparent.png^[multiply:#"..color.color,
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true,
+		drawtype = "glasslike",
+		use_texture_alpha = true,
+		sunlight_propagates = true,
+		paramtype = "light",
+	})
+
 	minetest.register_node('oblx_parts:'..color.id..'_glued', {
 		description = color.name..' Glued Part',
 		tiles = {"oblx_parts_glue.png^[multiply:#"..color.color},
@@ -177,24 +213,5 @@ for _, color in pairs(colors) do
 				{-0.5,  0.25,  0.25, 0.5,   0.5, 0.5}
 			}
 		}
-	})
-
-	minetest.register_node('oblx_parts:'..color.id..'_half', {
-		description = color.name..' Part (Half)',
-		tiles = {
-			"oblx_parts_outset.png^[multiply:#"..color.color,
-			"oblx_parts_inset.png^[multiply:#"..color.color,
-			"oblx_parts_smooth.png^[multiply:#"..color.color
-		},
-		groups = { oddly_breakable_by_hand = 3 },
-		is_ground_content = true,
-		drawtype = "nodebox",
-		paramtype = "light",
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, 0, 0.5}, -- NodeBox1
-			}
-		},
 	})
 end
