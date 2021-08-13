@@ -17,7 +17,7 @@ player_api.register_model("character.b3d", {
 	},
 	visual_size = {x = 3, y = 3},
 	collisionbox = {-1.8, 0.0, -0.9, 1.8, 4.6, 0.9},
-	stepheight = 1.1,
+	stepheight = 2.5,
 	eye_height = 4.47,
 })
 
@@ -33,8 +33,20 @@ minetest.register_on_joinplayer(function(player)
 		30
 	)
 
-	player:set_physics_override({ speed = 2, jump = 1.5 })
+	player:set_physics_override({
+		speed = 3,
+		jump = 4,
+		gravity = 3
+	})
 end)
+
+minetest.register_on_player_hpchange(function(player, hp_change, reason)
+	minetest.log(dump(reason))
+	if reason.type == 'fall' then
+		return 0
+	end
+	return hp_change
+end, true)
 
 minetest.register_on_joinplayer(function(player)
 	if minetest.is_creative_enabled(player:get_player_name()) and not player:get_inventory():contains_item("main", "oblx_partsbox:partsbox") then
