@@ -10,12 +10,7 @@ minetest.register_on_joinplayer(function(player)
 			'oblx_skybox_north.png',
 			'oblx_skybox_south.png',
 		},
-		clouds = false,
-		sky_color = {
-			fog_sun_tint = "#FFF",
-			fog_moon_tint = "#FFF",
-			fog_tint_type = "custom"
-		}
+		clouds = false
 	})
 
 	player:set_sun({
