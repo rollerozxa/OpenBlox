@@ -165,9 +165,7 @@ for _, color in pairs(colors) do
 	minetest.register_node('oblx_parts:'..color.id..'_trans', {
 		description = color.name..' Part (Transparent)',
 		tiles = {
-			"oblx_parts_outset.png^[multiply:#"..color.color.."^[opacity:127",
-			"oblx_parts_inset.png^[multiply:#"..color.color.."^[opacity:127",
-			"oblx_parts_smooth.png^[multiply:#"..color.color.."^[opacity:127",
+			"oblx_parts_smooth.png^[multiply:#"..color.color.."^[opacity:127"
 		},
 		inventory_image = "oblx_parts_transparent.png^[multiply:#"..color.color,
 		wield_image = "oblx_parts_transparent.png^[multiply:#"..color.color,
@@ -180,14 +178,14 @@ for _, color in pairs(colors) do
 	})
 
 	minetest.register_node('oblx_parts:'..color.id..'_glued', {
-		description = color.name..' Glued Part',
+		description = color.name..' Part (Glue)',
 		tiles = {"oblx_parts_glue.png^[multiply:#"..color.color},
 		groups = { oddly_breakable_by_hand = 3 },
 		is_ground_content = true
 	})
 	
 	minetest.register_node('oblx_parts:'..color.id..'_neon', {
-		description = color.name..' Neon Part',
+		description = color.name..' Part (Neon)',
 		tiles = {"oblx_parts_smooth.png^[colorize:#"..color.color..":255"},
 		groups = { oddly_breakable_by_hand = 3 },
 		light_source = 14,
@@ -195,7 +193,7 @@ for _, color in pairs(colors) do
 	})
 
 	minetest.register_node('oblx_parts:'..color.id..'_wedge', {
-		description = color.name..' Wedge Part',
+		description = color.name..' Part (Wedge)',
 		tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
 		groups = { oddly_breakable_by_hand = 3 },
 		is_ground_content = true,
