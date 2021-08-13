@@ -185,6 +185,14 @@ for _, color in pairs(colors) do
 		groups = { oddly_breakable_by_hand = 3 },
 		is_ground_content = true
 	})
+	
+	minetest.register_node('oblx_parts:'..color.id..'_neon', {
+		description = color.name..' Neon Part',
+		tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
+		groups = { oddly_breakable_by_hand = 3 },
+		light_source = 14,
+		is_ground_content = true
+	})
 
 	minetest.register_node('oblx_parts:'..color.id..'_wedge', {
 		description = color.name..' Wedge Part',
