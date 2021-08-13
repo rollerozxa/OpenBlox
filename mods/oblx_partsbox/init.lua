@@ -28,19 +28,30 @@ inv_trash:set_size("main", 1)
 local max_page = 1
 
 local function get_chest_formspec(page)
-	local start = 0 + (page-1)*32
-	return "size[8,9]"..
-	"list[detached:everything;main;0,0;8,4;"..start.."]"..
-	"list[current_player;main;0,5;8,4;]" ..
-	"label[6,4;Trash:]" ..
-	"list[detached:trash;main;7,4;1,1]" ..
-	"button[0,4;1,1;chest_of_everything_prev;"..F("<").."]"..
-	"button[1,4;1,1;chest_of_everything_next;"..F(">").."]"..
-	"label[2,4;"..F("Page: "..page).."]"..
-	"listring[detached:everything;main]"..
-	"listring[current_player;main]"..
-	"listring[detached:trash;main]"..
-	"field[-10,-10;0,0;internal_paginator;;"..F(page).."]"
+	local start = 0 + (page-1)*40
+	local chest_formspec = [[
+		formspec_version[4]
+		size[13.3,11.5]
+
+		list[detached:everything;main;0.5,0.3;10,4;${start}]
+
+		button[0.5,5.35;1,1;chest_of_everything_prev;\<]
+		label[2,5.85;Page: ${page} / ${max_page}]
+		button[4.25,5.35;1,1;chest_of_everything_next;\>]
+
+		label[10.3,5.85;Trash:]
+		list[detached:trash;main;11.7,5.35;1,1]
+
+		listring[current_player;main]
+		list[current_player;main;0.5,7.2;10,2;10]
+		list[current_player;main;0.5,10;10,1;0]
+
+		listring[detached:everything;main]
+		listring[current_player;main]
+		listring[detached:trash;main]
+		field[-10,-10;0,0;internal_paginator;;${page}]
+	]]
+	return chest_formspec:gsub("${start}", start):gsub("${page}", page):gsub("${max_page}", max_page)
 end
 
 minetest.register_craftitem("oblx_partsbox:partsbox", {
@@ -81,46 +92,32 @@ minetest.register_on_mods_loaded(function()
 			table.insert(items, itemstring)
 		end
 	end
-	--[[ Sort items in this order:
-	* Test tools
-	* Other tools
-	* Craftitems
-	* Other items
-	* Dummy items ]]
+	--[[ Items should be sorted in this order
+	1. Nodes (Parts)
+	2. Craftitems/Tools
+	Because the parts are probably what you wanna see first. ]]
 	local function compare(item1, item2)
 		local def1 = minetest.registered_items[item1]
 		local def2 = minetest.registered_items[item2]
 		local tool1 = def1.type == "tool"
 		local tool2 = def2.type == "tool"
-		local testtool1 = minetest.get_item_group(item1, "testtool") == 1
-		local testtool2 = minetest.get_item_group(item2, "testtool") == 1
-		local dummy1 = minetest.get_item_group(item1, "dummy") == 1
-		local dummy2 = minetest.get_item_group(item2, "dummy") == 1
 		local craftitem1 = def1.type == "craft"
 		local craftitem2 = def2.type == "craft"
-		if dummy1 and not dummy2 then
+		if tool1 and not tool2 then
 			return false
-		elseif not dummy1 and dummy2 then
-			return true
-		elseif testtool1 and not testtool2 then
-			return true
-		elseif not testtool1 and testtool2 then
-			return false
-		elseif tool1 and not tool2 then
-			return true
 		elseif not tool1 and tool2 then
-			return false
-		elseif craftitem1 and not craftitem2 then
 			return true
-		elseif not craftitem1 and craftitem2 then
+		elseif craftitem1 and not craftitem2 then
 			return false
+		elseif not craftitem1 and craftitem2 then
+			return true
 		else
 			return item1 < item2
 		end
 	end
 	table.sort(items, compare)
 	inv_everything:set_size("main", #items)
-	max_page = math.ceil(#items / 32)
+	max_page = math.ceil(#items / 40)
 	for i=1, #items do
 		inv_everything:add_item("main", items[i])
 	end

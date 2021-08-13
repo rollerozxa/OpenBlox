@@ -51,4 +51,18 @@ minetest.register_on_joinplayer(function(player)
 	if minetest.is_creative_enabled(player:get_player_name()) and not player:get_inventory():contains_item("main", "oblx_partsbox:partsbox") then
 		player:get_inventory():add_item("main", "oblx_partsbox:partsbox")
 	end
+
+	player:get_inventory():set_width("main", 10)
+	player:get_inventory():set_size("main", 30)
+	player:hud_set_hotbar_itemcount(10)
+
+	-- TODO: this fucking sucks, replace it with box of parts and integrate it directly into the inventory
+	player:set_inventory_formspec([[
+		formspec_version[4]
+		size[13.3,5.7]
+
+		listring[current_player;main]
+		list[current_player;main;0.5,0.8;10,2;10]
+		list[current_player;main;0.5,3.8;10,1;0]
+	]])
 end)
