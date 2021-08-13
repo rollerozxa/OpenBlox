@@ -41,7 +41,6 @@ minetest.register_on_joinplayer(function(player)
 end)
 
 minetest.register_on_player_hpchange(function(player, hp_change, reason)
-	minetest.log(dump(reason))
 	if reason.type == 'fall' then
 		return 0
 	end
