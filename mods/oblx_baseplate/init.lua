@@ -2,7 +2,7 @@
 
 mg = {
 	blocks = {
-		gray = minetest.get_content_id("oblx_parts:light_stone_gray"),
+		gray = minetest.get_content_id(minetest.settings:get('oblx_baseplate_part') or "oblx_parts:light_stone_gray"),
 	},
 	size = tonumber(minetest.settings:get('oblx_baseplate_size')) or 256,
 	depth = tonumber(minetest.settings:get('oblx_baseplate_depth')) or 20,
