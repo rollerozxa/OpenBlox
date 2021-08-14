@@ -183,7 +183,7 @@ for _, color in pairs(colors) do
 		groups = { oddly_breakable_by_hand = 3 },
 		is_ground_content = true
 	})
-	
+
 	minetest.register_node('oblx_parts:'..color.id..'_neon', {
 		description = color.name..' Part (Neon)',
 		tiles = {"oblx_parts_smooth.png^[colorize:#"..color.color..":255"},
@@ -221,3 +221,19 @@ for _, color in pairs(colors) do
 		}
 	})
 end
+
+minetest.register_node('oblx_parts:invisible_light', {
+	description = 'Invisible Light\n'
+				..minetest.colorize("#ff8888", "Indestructible, to remove you need to place a part in the place of it."),
+	inventory_image = "oblx_parts_invisible_light.png",
+	wield_image = "oblx_parts_invisible_light.png",
+	groups = { not_in_creative_inventory = 1 },
+	drawtype = "airlike",
+	sunlight_propagates = true,
+	paramtype = "light",
+	light_source = minetest.LIGHT_MAX,
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true
+})

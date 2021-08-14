@@ -59,7 +59,8 @@ minetest.register_craftitem("oblx_partsbox:partsbox", {
 	inventory_image = "oblx_partsbox_tex.png",
 	on_use = function(itemstack, user, pointed_thing)
 		minetest.show_formspec(user:get_player_name(), "oblx_partsbox:formspec", get_chest_formspec(1))
-	end
+	end,
+	groups = { not_in_creative_inventory = 1 },
 })
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
@@ -82,13 +83,13 @@ end)
 
 minetest.register_on_mods_loaded(function()
 	local items = {}
-	for itemstring,_ in pairs(minetest.registered_items) do
+	for itemstring, def in pairs(minetest.registered_items) do
 		if itemstring ~= ""
 		and itemstring ~= "unknown"
 		and itemstring ~= "ignore"
 		and itemstring ~= "air"
-		and itemstring ~= "oblx_partsbox:partsbox"
-		and itemstring ~= "worldedit:placeholder" then
+		and itemstring ~= "worldedit:placeholder"
+		and def.groups.not_in_creative_inventory ~= 1 then
 			table.insert(items, itemstring)
 		end
 	end
