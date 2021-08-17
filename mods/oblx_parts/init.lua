@@ -184,6 +184,13 @@ for _, color in pairs(colors) do
 		is_ground_content = true
 	})
 
+	minetest.register_node('oblx_parts:'..color.id..'_smooth', {
+		description = color.name..' Part (Smooth)',
+		tiles = {"oblx_parts_smooth.png^[multiply:#"..color.color},
+		groups = { oddly_breakable_by_hand = 3 },
+		is_ground_content = true
+	})
+
 	minetest.register_node('oblx_parts:'..color.id..'_neon', {
 		description = color.name..' Part (Neon)',
 		tiles = {"oblx_parts_smooth.png^[colorize:#"..color.color..":255"},
