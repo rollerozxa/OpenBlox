@@ -42,3 +42,17 @@ minetest.register_biome({
 	heat_point = 50,
 	humidity_point = 35,
 })
+
+minetest.register_decoration({
+	name = "oblx_mapgen:tree_test",
+	deco_type = "schematic",
+	place_on = {"oblx_parts:bright_green"},
+	sidelen = 16,
+	fill_ratio = 0.0001,
+	biomes = {"grasslands"},
+	y_max = 31000,
+	y_min = 1,
+	schematic = minetest.get_modpath("oblx_mapgen").."/schematics/tree_test.mts",
+	flags = "place_center_x, place_center_z",
+	rotation = "random",
+})
