@@ -1,9 +1,4 @@
 
-minetest.register_alias('mapgen_stone', 'oblx_parts:red')
-minetest.register_alias('mapgen_water_source', 'air')
-minetest.register_alias('mapgen_river_water_source', 'air')
-
-
 minetest.register_item(':', {
 	type = 'none',
 	wield_image = 'oblx_core_hand.png',
