@@ -91,3 +91,4 @@ local function include(file)
 end
 
 include('flowerlands')
+include('desert')
