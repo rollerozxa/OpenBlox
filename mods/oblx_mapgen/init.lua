@@ -84,3 +84,10 @@ minetest.register_decoration({
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
+
+
+local function include(file)
+	dofile(minetest.get_modpath("oblx_mapgen") .. "/"..file..".lua")
+end
+
+include('flowerlands')
